@@ -10,3 +10,5 @@ catalog:    true
 tags:
     - 赵梓豪
 ---
+
+![](/img/hao/hao.jpg)
