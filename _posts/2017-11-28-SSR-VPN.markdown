@@ -1,0 +1,46 @@
+---
+layout:     post
+title:      "搭建自己的SSR服务器"
+date:       2017-07-28 10:45:00
+author:     "yycoder"
+header-img: "img/post-bg-unix-linux.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+    - SSR
+    - VPN
+    - 翻墙
+---
+
+>由于十九大的原因，国内很多VPN都被禁用了，包括我已经使用了两年的蓝灯，于是在网上找翻墙方案，最后找到了通过使用SSR的方式，自己搭建服务器，稳定，速度快！  
+接下来我们看下如何操作：
+
+# 首先要有一台国外的服务器
+
+我选择认证GitHub学生认证，然后获得了一个`Student Developer Pack`，里边有DigitalOcean优惠券$50，可以创建最低配的服务器，使用10个月：
+   
+![](/img/in-post/ssr-vpn/ssr-vpn-github-student.jpg)
+
+![](/img/in-post/ssr-vpn/ssr-vpn-digitalocean.jpg)
+# 创建一台服务器
+`Choose an image`：
+
+![](/img/in-post/ssr-vpn/ssr-vpn-image.jpg)
+
+`Choose a size`：
+
+![](/img/in-post/ssr-vpn/ssr-vpn-size.jpg)
+
+`Choose a datacenter region`：
+
+![](/img/in-post/ssr-vpn/ssr-vpn-region.jpg)
+
+`点击创建`：
+
+![](/img/in-post/ssr-vpn/ssr-vpn-create.jpg)
+
+# 安装SSR服务器和BBR加速器
+
+    wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+    wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+
