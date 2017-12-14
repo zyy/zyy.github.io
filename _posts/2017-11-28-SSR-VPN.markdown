@@ -43,6 +43,7 @@ tags:
 
     wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
     wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+    
 # 安装 Cloud Torrent 离线下载工具
 
     wget -N --no-check-certificate https://softs.fun/Bash/cloudt.sh && chmod +x cloudt.sh && bash cloudt.sh 
