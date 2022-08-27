@@ -48,7 +48,7 @@ tags:
 
     public static ExecutorService newCachedThreadPool() {
 
-    return new ThreadPoolExecutor(0, Integer.MAX\_VALUE,
+    return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
 
                                   60L, TimeUnit.SECONDS,
 
@@ -179,6 +179,7 @@ tags:
 
     @Resource(name = "consumerQueueThreadPool")
     private ExecutorService consumerQueueThreadPool;
+
     @Override
     public void execute() {
         //消费队列
@@ -195,8 +196,6 @@ tags:
 谈到了 SpringBoot，也可利用它 actuator 组件来做线程池的监控。
 
 线程怎么说都是稀缺资源，对线程池的监控可以知道自己任务执行的状况、效率等。
-
-关于 actuator 就不再细说了，感兴趣的可以看看[这篇](http://t.cn/ReimM0o)，有详细整理过如何暴露监控端点。
 
 其实 ThreadPool 本身已经提供了不少 api 可以获取线程状态：
 
@@ -244,7 +243,7 @@ tags:
     /**
      * Function:订单服务
      */
-    public class CommandOrder extends HystrixCommand<String\> {
+    public class CommandOrder extends HystrixCommand<String> {
         private final static Logger LOGGER = LoggerFactory.getLogger(CommandOrder.class);
         private String orderName;
         public CommandOrder(String orderName) {
@@ -277,7 +276,7 @@ tags:
     /**
      * Function:用户服务
      */
-    public class CommandUser extends HystrixCommand<String\> {
+    public class CommandUser extends HystrixCommand<String> {
         private final static Logger LOGGER = LoggerFactory.getLogger(CommandUser.class);
         private String userName;
         public CommandUser(String userName) {
