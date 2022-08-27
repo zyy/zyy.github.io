@@ -1,3 +1,16 @@
+---
+layout:     post
+title:      "线程状态与流转关系"
+date:       2022-08-27 08:54:00
+author:     "yycoder"
+header-img: "img/post-bg-unix-linux.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+- Thread
+- 多线程
+---
+
 # 线程状态与流转关系
 
 ### 一、线程的状态
