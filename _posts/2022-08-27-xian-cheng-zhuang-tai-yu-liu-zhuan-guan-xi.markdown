@@ -13,7 +13,7 @@ tags:
 
 # 线程状态与流转关系
 
-### 一、线程的状态
+### 线程的状态
 
 1. 新建（New）：创建后尚未启动的线程状态&#x20;
 2. 可运行（Runnable）：包含 Running（位于可运行线程池中）和 Ready（位于线程池中等待调度选中获取CPU使用权）&#x20;
@@ -22,7 +22,7 @@ tags:
 5. 阻塞（Blocked）：等待获取排它锁&#x20;
 6. 结束（Terminated）：已终止线程的状态，线程已经结束执行
 
-### 二、线程状态流转关系
+### 线程状态流转关系
 
 对Java虚拟机中运行程序的每个对象来说都有这两个池：**锁池和等待池**
 
@@ -30,4 +30,3 @@ tags:
 
 <img src="/img/in-post/file.drawing.svg" alt="" class="gitbook-drawing">
 
-![](/img/in-post/file.drawing.svg)
