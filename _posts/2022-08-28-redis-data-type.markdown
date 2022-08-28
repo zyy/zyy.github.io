@@ -66,55 +66,32 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
 
 *   **命令执行**
 
-    
+    ```shell
     127.0.0.1:6379> set hello world
-
     OK
-
     127.0.0.1:6379> get hello
-
     "world"
-
     127.0.0.1:6379> del hello
-
     (integer) 1
-
     127.0.0.1:6379> get hello
-
     (nil)
-
     127.0.0.1:6379> set counter 2
-
     OK
-
     127.0.0.1:6379> get counter
-
     "2"
-
     127.0.0.1:6379> incr counter
-
     (integer) 3
-
     127.0.0.1:6379> get counter
-
     "3"
-
     127.0.0.1:6379> incrby counter 100
-
     (integer) 103
-
     127.0.0.1:6379> get counter
-
     "103"
-
     127.0.0.1:6379> decr counter
-
     (integer) 102
-
     127.0.0.1:6379> get counter
-
     "102"
-    
+    ```
 
 *   **实战场景**
     *   **缓存**： 经典使用场景，把常用信息，字符串，图片或者视频等信息放到redis中，redis作为缓存层，mysql做持久化层，降低mysql的读写压力。
@@ -149,8 +126,8 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
     *   lpush+ltrim=Capped Collection（有限集合）
     *   lpush+brpop=Message Queue（消息队列）
 *   **命令执行**
-    
 
+    ```shell
     127.0.0.1:6379> lpush mylist 1 2 ll ls mem
     (integer) 5
     127.0.0.1:6379> lrange mylist 0 -1
@@ -163,6 +140,7 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
     "1"
     127.0.0.1:6379> lindex mylist 10        # index不在 mylist 的区间范围内
     (nil)
+    ```
 
 
 *   **实战场景**
