@@ -63,14 +63,15 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
 | INCRBY | 将键存储的值加上整数 | INCRBY key amount |
 | DECRBY | 将键存储的值减去整数 | DECRBY key amount |
 
-    127.0.0.1:6379> set hello world
 
-    127.0.0.1:6379 set hello world
+*   **命令执行**
+
 
     127.0.0.1:6379> set hello world
+    
     OK
     127.0.0.1:6379> get hello
-    \"world\"
+    "world"
     127.0.0.1:6379> del hello
     (integer) 1
     127.0.0.1:6379> get hello
