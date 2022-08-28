@@ -68,28 +68,51 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
 
     
     127.0.0.1:6379> set hello world
+
     OK
+
     127.0.0.1:6379> get hello
+
     "world"
+
     127.0.0.1:6379> del hello
+
     (integer) 1
+
     127.0.0.1:6379> get hello
+
     (nil)
+
     127.0.0.1:6379> set counter 2
+
     OK
+
     127.0.0.1:6379> get counter
+
     "2"
+
     127.0.0.1:6379> incr counter
+
     (integer) 3
+
     127.0.0.1:6379> get counter
+
     "3"
+
     127.0.0.1:6379> incrby counter 100
+
     (integer) 103
+
     127.0.0.1:6379> get counter
+
     "103"
+
     127.0.0.1:6379> decr counter
+
     (integer) 102
+
     127.0.0.1:6379> get counter
+
     "102"
     
 
