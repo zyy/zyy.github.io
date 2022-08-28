@@ -66,9 +66,8 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
 
 *   **命令执行**
 
-
-    127.0.0.1:6379> set hello world
     
+    127.0.0.1:6379> set hello world
     OK
     127.0.0.1:6379> get hello
     "world"
@@ -92,7 +91,7 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
     (integer) 102
     127.0.0.1:6379> get counter
     "102"
-
+    
 
 *   **实战场景**
     *   **缓存**： 经典使用场景，把常用信息，字符串，图片或者视频等信息放到redis中，redis作为缓存层，mysql做持久化层，降低mysql的读写压力。
