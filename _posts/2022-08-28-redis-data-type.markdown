@@ -1,16 +1,28 @@
-[¶](#redis入门---数据类型：5种基础数据类型详解) Redis入门 - 数据类型：5种基础数据类型详解
+---
+layout:     post
+title:      "Redis-5种基础数据类型详解"
+date:       2022-08-28 14:25:00
+author:     "yycoder"
+header-img: "img/post-bg-unix-linux.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+- Redis
+---
+
+[](#redis入门---数据类型：5种基础数据类型详解) Redis入门 - 数据类型：5种基础数据类型详解
 =========================================================
 
 > Redis所有的key（键）都是字符串。我们在谈基础数据结构时，讨论的是存储值的数据类型，主要包括常见的5种数据类型，分别是：String、List、Set、Zset、Hash
 
-[¶](#redis数据结构简介) Redis数据结构简介
+[](#redis数据结构简介) Redis数据结构简介
 -----------------------------
 
 > Redis基础文章非常多，关于基础数据结构类型，我推荐你先看下[官方网站内容 (opens new window)](https://redis.io/topics/data-types)，然后再看下面的小结
 
 首先对redis来说，所有的key（键）都是字符串。我们在谈基础数据结构时，讨论的是存储值的数据类型，主要包括常见的5种数据类型，分别是：String、List、Set、Zset、Hash。
 
-![img_2.png](img/in-post/post-redis/img_2.png)
+![](/img/in-post/post-redis/img_2.png)
 
 
 | 结构类型   | 结构存储的值        | 结构的读写能力                             |
@@ -21,12 +33,12 @@
 | Hash散列 | 包含键值对的无序散列表 | 包含方法有添加、获取、删除单个元素 |
 | Zset有序集合 | 和散列一样，用于存储键值对 | 字符串成员与浮点数分数之间的有序映射；元素的排列顺序由分数的大小决定；包含方法有添加、获取、删除单个元素以及根据分值范围或成员来获取元素 |
 
-[¶](#基础数据结构详解) 基础数据结构详解
+[](#基础数据结构详解) 基础数据结构详解
 -----------------------
 
 > 内容其实比较简单，我觉得理解的重点在于这个结构怎么用，能够用来做什么？所以我在梳理时，围绕**图例**，**命令**，**执行**和**场景**来阐述。@pdai
 
-### [¶](#string字符串) String字符串
+### [](#string字符串) String字符串
 
 > String是redis中最基本的数据类型，一个key对应一个value。
 
@@ -36,7 +48,7 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
 
 下图是一个String类型的实例，其中键为hello，值为world
 
-![img_3.png](img/in-post/post-redis/img_3.png)
+![](/img/in-post/post-redis/img_3.png)
 
 *   **命令使用**
 
@@ -84,7 +96,7 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
     *   **计数器**：redis是单线程模型，一个命令执行完才会执行下一个，同时数据可以一步落地到其他的数据源。
     *   **session**：常见方案spring session + redis实现session共享，
 
-### [¶](#list列表) List列表
+### [](#list列表) List列表
 
 > Redis中的List其实就是链表（Redis用双端链表实现List）。
 
@@ -92,7 +104,7 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
 
 *   **图例**
 
-![img_4.png](img/in-post/post-redis/img_4.png)
+![](/img/in-post/post-redis/img_4.png)
 
 *   **命令使用**
 
@@ -132,7 +144,7 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
     *   **微博TimeLine**: 有人发布微博，用lpush加入时间轴，展示新的列表信息。
     *   **消息队列**
 
-### [¶](#set集合) Set集合
+### [](#set集合) Set集合
 
 > Redis 的 Set 是 String 类型的无序集合。集合成员是唯一的，这就意味着集合中不能出现重复的数据。
 
@@ -140,7 +152,7 @@ Redis 中集合是通过哈希表实现的，所以添加，删除，查找的�
 
 *   **图例**
 
-![img_5.png](img/in-post/post-redis/img_5.png)
+![](/img/in-post/post-redis/img_5.png)
 
 *   **命令使用**
 
@@ -170,13 +182,13 @@ Redis 中集合是通过哈希表实现的，所以添加，删除，查找的�
     *   **标签**（tag）,给用户添加标签，或者用户给消息添加标签，这样有同一标签或者类似标签的可以给推荐关注的事或者关注的人。
     *   **点赞，或点踩，收藏等**，可以放到set中实现
 
-### [¶](#hash散列) Hash散列
+### [](#hash散列) Hash散列
 
 > Redis hash 是一个 string 类型的 field（字段） 和 value（值） 的映射表，hash 特别适合用于存储对象。
 
 *   **图例**
 
-![img_1.png](img/in-post/post-redis/img_1.png)
+![](/img/in-post/post-redis/img_1.png)
 
 *   **命令使用**
 
@@ -222,7 +234,7 @@ Redis 中集合是通过哈希表实现的，所以添加，删除，查找的�
 *   **实战场景**
     *   **缓存**： 能直观，相比string更节省空间，的维护缓存信息，如用户信息，视频信息等。
 
-### [¶](#zset有序集合) Zset有序集合
+### [](#zset有序集合) Zset有序集合
 
 > Redis 有序集合和集合一样也是 string 类型元素的集合,且不允许重复的成员。不同的是每个元素都会关联一个 double 类型的分数。redis 正是通过分数来为集合中的成员进行从小到大的排序。
 
@@ -233,7 +245,7 @@ Redis 中集合是通过哈希表实现的，所以添加，删除，查找的�
 
 *   **图例**
 
-![img.png](img/in-post/post-redis/img.png)
+![](/img/in-post/post-redis/img.png)
 
 *   **命令使用**
 
