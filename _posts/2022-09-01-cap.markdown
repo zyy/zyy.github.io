@@ -8,6 +8,7 @@ header-mask: 0.3
 catalog:    true
 tags:
 - CAP
+- 分布式
 ---
 
 # CAP
@@ -18,7 +19,7 @@ tags:
 
 2年后，麻省理工学院的Seth Gilbert和Nancy Lynch 发表了布鲁尔猜想的证明，CAP理论正式成为分布式领域的定理。
 
-#### 简介 <a href="#jian-jie" id="jian-jie"></a>
+#### 简介 
 
 **CAP** 也就是 **Consistency（一致性）**、**Availability（可用性）**、**Partition Tolerance（分区容错性）** 这三个单词首字母组合。
 
